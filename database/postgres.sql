@@ -82,7 +82,7 @@ $$ LANGUAGE plpgsql;
 
 -- Note that unlike Oracle we are able to process the data row by row
 -- and it will be completely fine.
-CREATE OR REPLACE TRIGGER lecture_chair_cannot_conduct_lecture_trg
+CREATE TRIGGER lecture_chair_cannot_conduct_lecture_trg
   BEFORE INSERT OR UPDATE OF speaker_id, session_id
   ON lecture
   FOR EACH ROW

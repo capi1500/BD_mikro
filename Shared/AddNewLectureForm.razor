@@ -69,6 +69,13 @@
             });
         }
 
+        if (Session.Chair.Id == createLectureModel.SpeakerId)
+        {
+            errors.Add(nameof(createLectureModel.SpeakerId), new (){
+                $"Sessions' man in the chair is {Session.Chair.DisplayName}. The speaker must be different than man in the chair."
+            });
+        }
+        
         if (errors.Any())
         {
             validation?.DisplayErrors(errors);
